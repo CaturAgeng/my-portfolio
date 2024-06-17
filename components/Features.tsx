@@ -40,9 +40,9 @@ import {
     );
   };
   
-  export default function Features() {
+  export default function Features({ scrollTo }: { scrollTo : () => void }) {
     return (
-      <Container maxW={'5xl'} py={12} minH={'100vh'}>
+      <Container maxW={'5xl'} py={12} minH={'100vh'} className='section'>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
           <Stack spacing={4}>
             <Text
@@ -61,6 +61,7 @@ import {
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore
             </Text>
+            
             <Stack
               spacing={4}
               divider={
@@ -99,6 +100,7 @@ import {
               objectFit={'cover'}
             />
           </Flex>
+          <button onClick={scrollTo}>Go to Testimonials</button>
         </SimpleGrid>
       </Container>
     );

@@ -85,13 +85,14 @@ const TestimonialAvatar = ({
   );
 };
 
-export default function Testimonials() {
+export default function Testimonials({ scrollTo }: { scrollTo : () => void }) {
   return (
     <Box bg={useColorModeValue('gray.100', 'gray.700')}>
       <Container maxW={'7xl'} minH={'100vh'} py={16} as={Stack} >
         <Stack spacing={0} align={'center'}>
           <Heading>Our Clients Speak</Heading>
           <Text>We have been working with clients around the world</Text>
+          
         </Stack>
         <Stack
           direction={{ base: 'column', md: 'row' }}
@@ -145,6 +146,7 @@ export default function Testimonials() {
             />
           </Testimonial>
         </Stack>
+        <button onClick={scrollTo}>Go to Hero Section</button>
       </Container>
     </Box>
   );

@@ -5,18 +5,16 @@ import {
   Box,
   Heading,
   Text,
-  Button,
   Image,
   Icon,
-  IconButton,
   createIcon,
   IconProps,
   useColorModeValue,
 } from '@chakra-ui/react';
 
-export default function HeroSection() {
+export default function HeroSection({ scrollTo }: { scrollTo: () => void }) {
   return (
-    <Container maxW={'7xl'} minH={'100vh'}>
+    <Container maxW={'7xl'} minH={'100vh'} className='section'>
       <Stack
         align={'center'}
         spacing={{ base: 8, md: 10 }}
@@ -50,6 +48,7 @@ export default function HeroSection() {
           <Text color={'white.500'}>
           I am a fresh graduate majoring in electrical engineering and I am a career switcher. After graduating from college, I studied aircraft maintenance for 18 months. I tried something new by starting the Full Stack Software Engineer (FSSE) program that RevoU still holds. While studying in the Full Stack Software Engineer program, I learned a lot about the tools used by a Software Engineer, such as Javascript, Typescript, React, Next.js, MySQL, and Python, Flask. I am confident that I can help companies achieve their business goals more effectively with my skills and dedication. I am very interested in working in a Frontend Engineer position, where I can leverage my technical skills to create intuitive and engaging user interfaces.
           </Text>
+          <button onClick={scrollTo}>Go to Features</button>
         </Stack>
         <Flex
           flex={1}
